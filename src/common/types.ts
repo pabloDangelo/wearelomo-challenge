@@ -6,7 +6,7 @@ interface ITask {
     // due_on: string;
   }
 
-class Task implements Task {
+class Task implements ITask {
     id: number;
     title: string; 
     status: string;
@@ -18,5 +18,29 @@ class Task implements Task {
       }
 }
 
-export { Task };
-export type { ITask };
+interface IUser {
+  id: number,
+  name: string,
+  email: string,
+  gender: string,
+  status: string
+}
+
+class User implements IUser {
+  id: number;
+  name: string;
+  email: string;
+  gender: string;
+  status: string;
+
+  constructor(id: number, name: string, email: string, gender: string, status: string) {
+      this.id = id;
+      this.name = name; 
+      this.email = email; 
+      this.gender = gender; 
+      this.status = status;
+    }
+}
+
+export { Task, User };
+export type { ITask, IUser };

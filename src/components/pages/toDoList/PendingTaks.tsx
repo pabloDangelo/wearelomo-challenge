@@ -4,10 +4,11 @@ import { ITask } from '../../../common/types'
 
 interface Props {
   tasks: Array<ITask>;
-  onChangeTasks: any
+  onChangeTasks: any,
+  onDelete: any
 }
 
-const PendingTaks = ({ tasks, onChangeTasks }: Props) => {
+const PendingTaks = ({ tasks, onChangeTasks, onDelete }: Props) => {
 
   const [items, setItems] = useState<any[]>([]);
 
@@ -33,7 +34,7 @@ const PendingTaks = ({ tasks, onChangeTasks }: Props) => {
           <div>{t.title}</div>
         </td>
         <td style={{width: '5%'}}>
-          <Button variant="danger">Delete</Button>
+          <Button variant="danger" onClick={() => onDelete(t.id)}>Delete</Button>
         </td>
       </tr>
       

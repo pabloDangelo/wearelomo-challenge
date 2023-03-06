@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { AbmUsuarios } from './pages/abmUsuarios/AbmUsuarios'
+import AbmUsuarios from './pages/abmUsuarios/AbmUsuarios'
 import ToDoList from './pages/toDoList/ToDoList'
 
 export const WebRoutes = () => {

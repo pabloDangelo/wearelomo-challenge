@@ -1,13 +1,14 @@
-import React, { FunctionComponent, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Form, Table } from 'react-bootstrap';
 import { ITask } from '../../../common/types'
 
 interface Props {
   tasks: Array<ITask>;
-  onChangeTasks: any
+  onChangeTasks: any,
+  onDelete: any
 }
 
-const CompletedTaks = ({ tasks, onChangeTasks }: Props) => {
+const CompletedTaks = ({ tasks, onChangeTasks, onDelete }: Props) => {
 
   const [items, setItems] = useState<any[]>([]);
 
@@ -33,7 +34,7 @@ const CompletedTaks = ({ tasks, onChangeTasks }: Props) => {
           <div>{t.title}</div>
         </td>
         <td style={{width: '5%'}}>
-          <Button variant="danger">Delete</Button>
+          <Button variant="danger" onClick={() => onDelete(t.id)}>Delete</Button>
         </td>
       </tr>
       
